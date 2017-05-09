@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08251C831EC1E570002D23C5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08251C821EC1E570002D23C5 /* Movie.swift */; };
 		084FA6D61EC1C76C00208CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FA6D51EC1C76C00208CF7 /* AppDelegate.swift */; };
 		084FA6D81EC1C76C00208CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084FA6D71EC1C76C00208CF7 /* ViewController.swift */; };
 		084FA6DB1EC1C76C00208CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6D91EC1C76C00208CF7 /* Main.storyboard */; };
 		084FA6DD1EC1C76C00208CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */; };
 		084FA6E01EC1C76C00208CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */; };
+		678F14A856C389C3515E8D6E /* Pods_MovieNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08251C821EC1E570002D23C5 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		084FA6D21EC1C76C00208CF7 /* MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		084FA6D51EC1C76C00208CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		084FA6D71EC1C76C00208CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		084FA6DF1EC1C76C00208CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		084FA6E11EC1C76C00208CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		321E2959598777BDE7AA28EF /* Pods-MovieNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.release.xcconfig"; sourceTree = "<group>"; };
+		851CA09237E09CB945EF7712 /* Pods-MovieNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				678F14A856C389C3515E8D6E /* Pods_MovieNight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				084FA6D41EC1C76C00208CF7 /* MovieNight */,
 				084FA6D31EC1C76C00208CF7 /* Products */,
+				B2D00C380732B5F33B4C88EA /* Pods */,
+				634C470AADBC63D2735F81D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +69,26 @@
 				084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */,
 				084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */,
 				084FA6E11EC1C76C00208CF7 /* Info.plist */,
+				08251C821EC1E570002D23C5 /* Movie.swift */,
 			);
 			path = MovieNight;
+			sourceTree = "<group>";
+		};
+		634C470AADBC63D2735F81D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2D00C380732B5F33B4C88EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				851CA09237E09CB945EF7712 /* Pods-MovieNight.debug.xcconfig */,
+				321E2959598777BDE7AA28EF /* Pods-MovieNight.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 084FA6E41EC1C76C00208CF7 /* Build configuration list for PBXNativeTarget "MovieNight" */;
 			buildPhases = (
+				D33C0328B43264C215EEA824 /* [CP] Check Pods Manifest.lock */,
 				084FA6CE1EC1C76C00208CF7 /* Sources */,
 				084FA6CF1EC1C76C00208CF7 /* Frameworks */,
 				084FA6D01EC1C76C00208CF7 /* Resources */,
+				3297A0AFDE05CB71878A2EA1 /* [CP] Embed Pods Frameworks */,
+				24ADBAA731A7C388628EF4C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +162,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24ADBAA731A7C388628EF4C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3297A0AFDE05CB71878A2EA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D33C0328B43264C215EEA824 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		084FA6CE1EC1C76C00208CF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +217,7 @@
 			files = (
 				084FA6D81EC1C76C00208CF7 /* ViewController.swift in Sources */,
 				084FA6D61EC1C76C00208CF7 /* AppDelegate.swift in Sources */,
+				08251C831EC1E570002D23C5 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +338,7 @@
 		};
 		084FA6E51EC1C76C00208CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 851CA09237E09CB945EF7712 /* Pods-MovieNight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CH45DPWU9R;
@@ -272,6 +352,7 @@
 		};
 		084FA6E61EC1C76C00208CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321E2959598777BDE7AA28EF /* Pods-MovieNight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CH45DPWU9R;
@@ -302,6 +383,7 @@
 				084FA6E61EC1C76C00208CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
