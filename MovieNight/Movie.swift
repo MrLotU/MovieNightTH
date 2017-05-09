@@ -15,21 +15,21 @@ enum ImageType {
     case backDrop, poster
 }
 
-class Movie {
+open class Movie {
     let title: String
-    let genres: [[String]]
+    let genres: [[String:Int]]
     let backdropPath: String
-    let posterImage: String
+    let posterPath: String
     
     func getImage(completion: @escaping ((Image) -> Void)) {
         if backdropPath != "" {
-            Alamofire.request("https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg").responseImage {
+            Alamofire.request("https://image.tmdb.org/t/p/original\(backdropPath)").responseImage {
                 if let image = $0.result.value {
                     completion(image)
                 }
             }
-        } else if posterImage != "" {
-            Alamofire.request("").responseImage {
+        } else if posterPath != "" {
+            Alamofire.request("https://image.tmdb.org/t/p/original\(posterPath)").responseImage {
                 if let image = $0.result.value {
                     completion(image)
                 }
@@ -39,10 +39,10 @@ class Movie {
         }
     }
     
-    init(title: String, genres: [[String]], backdropPath: String, posterPath: String) {
+    init(title: String, genres: [[String:Int]], backdropPath: String, posterPath: String) {
         self.title = title
         self.genres = genres
         self.backdropPath = backdropPath
-        self.posterImage = posterPath
+        self.posterPath = posterPath
     }
 }

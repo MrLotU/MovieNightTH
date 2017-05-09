@@ -13,6 +13,7 @@
 		084FA6DB1EC1C76C00208CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6D91EC1C76C00208CF7 /* Main.storyboard */; };
 		084FA6DD1EC1C76C00208CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */; };
 		084FA6E01EC1C76C00208CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */; };
+		08931B1D1EC1FB5E00B7DA7E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */; };
 		678F14A856C389C3515E8D6E /* Pods_MovieNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		084FA6DF1EC1C76C00208CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		084FA6E11EC1C76C00208CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321E2959598777BDE7AA28EF /* Pods-MovieNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.release.xcconfig"; sourceTree = "<group>"; };
 		851CA09237E09CB945EF7712 /* Pods-MovieNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */,
 				084FA6E11EC1C76C00208CF7 /* Info.plist */,
 				08251C821EC1E570002D23C5 /* Movie.swift */,
+				08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */,
 			);
 			path = MovieNight;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				084FA6D81EC1C76C00208CF7 /* ViewController.swift in Sources */,
+				08931B1D1EC1FB5E00B7DA7E /* DataModel.swift in Sources */,
 				084FA6D61EC1C76C00208CF7 /* AppDelegate.swift in Sources */,
 				08251C831EC1E570002D23C5 /* Movie.swift in Sources */,
 			);
