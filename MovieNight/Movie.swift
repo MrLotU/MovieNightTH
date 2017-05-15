@@ -17,7 +17,7 @@ enum ImageType {
 
 open class Movie {
     let title: String
-    let genres: [[String:Int]]
+    let genres: [Genre]
     let backdropPath: String
     let posterPath: String
     
@@ -39,7 +39,7 @@ open class Movie {
         }
     }
     
-    init(title: String, genres: [[String:Int]], backdropPath: String, posterPath: String) {
+    init(title: String, genres: [Genre], backdropPath: String, posterPath: String) {
         self.title = title
         self.genres = genres
         self.backdropPath = backdropPath
