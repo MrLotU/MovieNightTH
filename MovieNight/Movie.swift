@@ -20,6 +20,7 @@ open class Movie {
     let genres: [Genre]
     let backdropPath: String
     let posterPath: String
+    let id: Int
     
     func getImage(completion: @escaping ((Image) -> Void)) {
         if backdropPath != "" {
@@ -39,10 +40,11 @@ open class Movie {
         }
     }
     
-    init(title: String, genres: [Genre], backdropPath: String, posterPath: String) {
+    init(id: Int, title: String, genres: [Genre], backdropPath: String, posterPath: String) {
         self.title = title
         self.genres = genres
         self.backdropPath = backdropPath
         self.posterPath = posterPath
+        self.id = id
     }
 }
