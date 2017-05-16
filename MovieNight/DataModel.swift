@@ -12,10 +12,11 @@ import SwiftyJSON
 
 private let API_Key = "7b040a4d1f494a7e961e0262903264da"
 public var movies: [Movie] = []
+public var moviesByGenre: [Genre: [Movie]] = [:]
 
-public enum Genre: String {
+public enum Genre: Int {
     
-    case Action = "Action", Adventure = "Adventure", Animation = "Animation", Comedy = "Comedy", Crime = "Crime", Documentary = "Documentary", Drama = "Drama", Family = "Family", Fantasy = "Fantasy", History = "History", Horror = "Horror", Music = "Music", Mystery = "Mystery", Romance = "Romance", ScienceFiction = "Science Fiction", TVMovie = "TV Movie", Thriller = "Thriller", War = "War", Western = "Western"
+    case Action = 28, Adventure = 12, Animation = 16, Comedy = 35, Crime = 80, Documentary = 90, Drama = 18, Family = 10751, Fantasy = 14, History = 36, Horror = 27, Music = 10402, Mystery = 9648, Romance = 10749, ScienceFiction = 878, TVMovie = 10770, Thriller = 53, War = 10752, Western = 37
     
     var id: Int {
         switch self {
@@ -41,7 +42,9 @@ public enum Genre: String {
         }
     }
     
-    
+    var movies: [Movie] {
+        return []
+    }
 }
 
 func getMovie(byId id: Int) {
@@ -58,8 +61,8 @@ func createMovie(fromJSON json: JSON) {
     guard let genresRaw = json["genres"].array else {print("Something exploded"); return}
     var genres: [Genre] = []
     for genreDict in genresRaw {
-        guard let name = genreDict["name"].string else {print("Something exploded"); return}
-        guard let genre = Genre(rawValue: name) else {print("Something exploded"); return}
+        guard let id = genreDict["id"].int else {print("Something exploded"); return}
+        guard let genre = Genre(rawValue: id) else {print("Something exploded"); return}
         genres.append(genre)
     }
     guard let backdropPath = json["backdrop_path"].string else {print("Something exploded"); return}
@@ -70,8 +73,8 @@ func createMovie(fromJSON json: JSON) {
     movies.append(movie)
 }
 
-func getMovie(byGenre genre: Genre) {
-    Alamofire.request("https://api.themoviedb.org/3/genre/\(genre.id)/movies?api_key=\(API_Key)&language=en-US&include_adult=true&sort_by=created_at.desc").responseJSON {
+func getMovies(byGenre genre: Genre) {
+    Alamofire.request("https://api.themoviedb.org/3/genre/\(genre.rawValue)/movies?api_key=\(API_Key)&language=en-US&include_adult=true&sort_by=created_at.desc").responseJSON {
         if $0.result.value != nil {
             let json = JSON($0.result.value!)
             createMovie(fromJSON: json, withGenre: genre)
@@ -80,6 +83,38 @@ func getMovie(byGenre genre: Genre) {
 }
 
 func createMovie(fromJSON json: JSON, withGenre genre: Genre) {
-    
+    guard let results = json["results"].array else {print("Something exploded! Results ="); return}
+    var moviesForGenre: [Movie] = []
+    for result in results {
+        guard let title = result["title"].string else {print("Something exploded! title ="); return}
+        guard let genresRaw = json["genre_ids"].arrayObject else {print("Something exploded! genre_ids ="); return}
+        var genres: [Genre] = []
+        for genreId in genresRaw {
+            let id = genreId as! Int
+            guard let genre = Genre(rawValue: id) else {print("Something exploded! genre ="); return}
+            genres.append(genre)
+        }
+        guard let backdropPath = result["backdrop_path"].string else {print("Something exploded! backdrop_path ="); return}
+        guard let posterPath =  result["poster_path"].string else {print("Something exploded! poster_path ="); return}
+        let movie = Movie(title: title, genres: genres, backdropPath: backdropPath, posterPath: posterPath)
+        moviesForGenre.append(movie)
+    }
+    moviesByGenre.updateValue(moviesForGenre, forKey: genre)
+    print(moviesByGenre[genre])
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

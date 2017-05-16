@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        getMovie(byId: 423)
+        getMovies(byGenre: .Action)
+        
     }
 
     override func didReceiveMemoryWarning() {
