@@ -11,8 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 private let API_Key = "7b040a4d1f494a7e961e0262903264da"
-public var movies: [Movie] = []
-public var moviesByGenre: [Genre: [Movie]] = [:]
 public var genres: [Genre] = [.Action, .Adventure, .Animation, .Comedy, .Crime, .Documentary, .Drama, .Family, .Fantasy, .History, .Horror, .Music, .Mystery, .Romance, .ScienceFiction, .TVMovie, .Thriller, .War, .Western]
 
 public enum Genre: Int {

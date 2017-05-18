@@ -17,7 +17,8 @@ class ViewController: UIViewController {
             getMovies(byGenre: genre)
         }
     }
-
+    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

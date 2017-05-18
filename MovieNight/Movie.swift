@@ -11,9 +11,8 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-enum ImageType {
-    case backDrop, poster
-}
+public var movies: [Movie] = []
+public var moviesByGenre: [Genre: [Movie]] = [:]
 
 open class Movie {
     let title: String
@@ -36,7 +35,7 @@ open class Movie {
                 }
             }
         } else {
-            print("No image found, aww")
+            completion(UIImage(named: "backdrop")!)
         }
     }
     
