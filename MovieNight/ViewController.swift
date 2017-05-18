@@ -17,7 +17,6 @@ class ViewController: UIViewController {
             getMovies(byGenre: genre)
         }
     }
-    
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

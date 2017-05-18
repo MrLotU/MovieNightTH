@@ -14,6 +14,7 @@
 		084FA6DD1EC1C76C00208CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */; };
 		084FA6E01EC1C76C00208CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */; };
 		08931B1D1EC1FB5E00B7DA7E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */; };
+		08DBB2011ECDA5AE00A08925 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DBB2001ECDA5AE00A08925 /* MovieModel.swift */; };
 		678F14A856C389C3515E8D6E /* Pods_MovieNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		084FA6DF1EC1C76C00208CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		084FA6E11EC1C76C00208CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		08DBB2001ECDA5AE00A08925 /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		0C794C79DB31CEB28277EF56 /* Pods_MovieNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321E2959598777BDE7AA28EF /* Pods-MovieNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.release.xcconfig"; sourceTree = "<group>"; };
 		851CA09237E09CB945EF7712 /* Pods-MovieNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieNight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,16 +67,49 @@
 		084FA6D41EC1C76C00208CF7 /* MovieNight */ = {
 			isa = PBXGroup;
 			children = (
-				084FA6D51EC1C76C00208CF7 /* AppDelegate.swift */,
-				084FA6D71EC1C76C00208CF7 /* ViewController.swift */,
-				084FA6D91EC1C76C00208CF7 /* Main.storyboard */,
-				084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */,
-				084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */,
-				084FA6E11EC1C76C00208CF7 /* Info.plist */,
-				08251C821EC1E570002D23C5 /* Movie.swift */,
-				08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */,
+				08DBB1FD1ECDA57F00A08925 /* Data Model */,
+				08DBB1FC1ECDA57100A08925 /* Classes */,
+				08DBB1FB1ECDA55B00A08925 /* Helper files */,
+				08DBB1FA1ECDA54700A08925 /* UI */,
 			);
 			path = MovieNight;
+			sourceTree = "<group>";
+		};
+		08DBB1FA1ECDA54700A08925 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				084FA6DC1EC1C76C00208CF7 /* Assets.xcassets */,
+				084FA6D91EC1C76C00208CF7 /* Main.storyboard */,
+				084FA6DE1EC1C76C00208CF7 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		08DBB1FB1ECDA55B00A08925 /* Helper files */ = {
+			isa = PBXGroup;
+			children = (
+				084FA6D51EC1C76C00208CF7 /* AppDelegate.swift */,
+				084FA6E11EC1C76C00208CF7 /* Info.plist */,
+			);
+			name = "Helper files";
+			sourceTree = "<group>";
+		};
+		08DBB1FC1ECDA57100A08925 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				084FA6D71EC1C76C00208CF7 /* ViewController.swift */,
+				08251C821EC1E570002D23C5 /* Movie.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		08DBB1FD1ECDA57F00A08925 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				08931B1C1EC1FB5E00B7DA7E /* DataModel.swift */,
+				08DBB2001ECDA5AE00A08925 /* MovieModel.swift */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		634C470AADBC63D2735F81D4 /* Frameworks */ = {
@@ -220,6 +255,7 @@
 			files = (
 				084FA6D81EC1C76C00208CF7 /* ViewController.swift in Sources */,
 				08931B1D1EC1FB5E00B7DA7E /* DataModel.swift in Sources */,
+				08DBB2011ECDA5AE00A08925 /* MovieModel.swift in Sources */,
 				084FA6D61EC1C76C00208CF7 /* AppDelegate.swift in Sources */,
 				08251C831EC1E570002D23C5 /* Movie.swift in Sources */,
 			);
