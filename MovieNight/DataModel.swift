@@ -10,6 +10,16 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//MARK: Extensions
+
+extension ViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+//MARK: API
+
 private let API_Key = "7b040a4d1f494a7e961e0262903264da"
 public var genres: [Genre] = [.Action, .Adventure, .Animation, .Comedy, .Crime, .Documentary, .Drama, .Family, .Fantasy, .History, .Horror, .Music, .Mystery, .Romance, .ScienceFiction, .TVMovie, .Thriller, .War, .Western]
 
