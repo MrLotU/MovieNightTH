@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-public var person1Genres: [Genre] = [.Action, .Adventure]
-public var person2Genres: [Genre] = [.War, .Action]
+public var person1Genres: [Genre] = []
+public var person2Genres: [Genre] = []
 
 func getResults() -> [Movie] {
     //Get intersected genres

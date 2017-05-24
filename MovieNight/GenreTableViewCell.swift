@@ -10,6 +10,8 @@ import UIKit
 
 class GenreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var title: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

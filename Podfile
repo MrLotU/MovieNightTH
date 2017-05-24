@@ -9,4 +9,5 @@ target 'MovieNight' do
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'SevenSwitch', '~> 2.1'
 end
