@@ -18,6 +18,14 @@ extension ViewController {
     }
 }
 
+//MARK: Protocols
+
+protocol GenreDelegate {
+    func setImage(_ image: UIImage, forPerson1 person1: Bool)
+    var personOneDone: Bool { get set }
+    var personTwoDone: Bool { get set }
+}
+
 //MARK: API
 
 private let API_Key = "7b040a4d1f494a7e961e0262903264da"
@@ -27,27 +35,27 @@ public enum Genre: Int {
     
     case Action = 28, Adventure = 12, Animation = 16, Comedy = 35, Crime = 80, Documentary = 99, Drama = 18, Family = 10751, Fantasy = 14, History = 36, Horror = 27, Music = 10402, Mystery = 9648, Romance = 10749, ScienceFiction = 878, TVMovie = 10770, Thriller = 53, War = 10752, Western = 37
     
-    var id: Int {
+    var name: String {
         switch self {
-        case .Action: return 28
-        case .Adventure: return 12
-        case .Animation: return 16
-        case .Comedy: return 35
-        case .Crime: return 80
-        case .Documentary: return 99
-        case .Drama: return 18
-        case .Family: return 10751
-        case .Fantasy: return 14
-        case .History: return 36
-        case .Horror: return 27
-        case .Music: return 10402
-        case .Mystery: return 9648
-        case .Romance: return 10749
-        case .ScienceFiction: return 878
-        case .TVMovie: return 10770
-        case .Thriller: return 53
-        case .War: return 10752
-        case .Western: return 37
+        case .Action: return "Action"
+        case .Adventure: return "Adventure"
+        case .Animation: return "Animation"
+        case .Comedy: return "Comedy"
+        case .Crime: return "Crime"
+        case .Documentary: return "Documentary"
+        case .Drama: return "Drama"
+        case .Family: return "Family"
+        case .Fantasy: return "Fantasy"
+        case .History: return "History"
+        case .Horror: return "Horror"
+        case .Music: return "Music"
+        case .Mystery: return "Mystery"
+        case .Romance: return "Romance"
+        case .ScienceFiction: return "Science Fiction"
+        case .TVMovie: return "TV Movie"
+        case .Thriller: return "Thriller"
+        case .War: return "War"
+        case .Western: return "Western"
         }
     }
 }
