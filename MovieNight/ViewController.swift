@@ -15,6 +15,7 @@ class ViewController: UIViewController, MovieNightDelegate {
     @IBOutlet weak var viewResultsButton: UIButton!
     var personOneDone: Bool = false
     var personTwoDone: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,8 +57,6 @@ class ViewController: UIViewController, MovieNightDelegate {
             selectGenres(sender)
         } else if sender == viewResultsButton {
             viewMovies()
-        } else {
-            //TODO: Error magic
         }
     }
     

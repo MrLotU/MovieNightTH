@@ -14,26 +14,22 @@ public var person2Genres: [Genre] = []
 
 
 func getResults() -> [Movie] {
-    //Get intersected genres
-    var intersectedGenres: [Genre] = []
-    for genre in person1Genres {
-        if person2Genres.contains(genre) {
-            intersectedGenres.append(genre)
-        }
-    }
-    
-    if intersectedGenres.isEmpty {
-        //TODO: Fix this with lasers
-    }
-    
     //Get results
-    var results: [Movie] = []
-    for genre in intersectedGenres {
+    var moviesForPerson1: [Movie] = []
+    for genre in person1Genres {
         guard let moviesForGenre = moviesByGenre[genre] else {
-            //TODO: Get some errors in here
+            print("Something went wrong. No movies were found for this Genre")
             return []
         }
-        results += moviesForGenre
+        moviesForPerson1 += moviesForGenre
     }
-    return results
+    var movieResults: [Movie] = []
+    for movie in moviesForPerson1 {
+        for genre in movie.genres {
+            if person2Genres.contains(genre) {
+                movieResults.append(movie)
+            }
+        }
+    }
+    return movieResults
 }

@@ -18,6 +18,7 @@ extension ViewController {
     }
 }
 
+
 //MARK: Protocols
 
 protocol MovieNightDelegate {
@@ -25,6 +26,12 @@ protocol MovieNightDelegate {
     func startOver()
     var personOneDone: Bool { get set }
     var personTwoDone: Bool { get set }
+}
+
+//MARK: Error
+
+enum MovieNightError {
+    case buttonNotFound
 }
 
 //MARK: API

@@ -16,6 +16,9 @@ class GenreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
     }
     
     func done() {

@@ -16,6 +16,9 @@ class MoviesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start over", style: .done, target: self, action: #selector(done))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
     }
     
     func done() {
@@ -44,15 +47,11 @@ class MoviesTableViewController: UITableViewController {
         cell.titleLabel.text = results[indexPath.row].title
         let genres = results[indexPath.row].genres
         var genresLabelText = ""
-        if !genres.isEmpty {
-            for genre in genres {
-                genresLabelText += "\(genre.name), "
-            }
-            genresLabelText.characters.removeLast()
-            cell.genresLabel.text = genresLabelText
-        } else {
-            cell.genresLabel.text = "Maybe you should try again!"
+        for genre in genres {
+            genresLabelText += "\(genre.name), "
         }
+        genresLabelText.characters.removeLast(2)
+        cell.genresLabel.text = genresLabelText
         results[indexPath.row].getImage { (image) in
             cell.moviePoster.image = image
         }
