@@ -22,6 +22,10 @@ func getResults() -> [Movie] {
         }
     }
     
+    if intersectedGenres.isEmpty {
+        //TODO: Fix this with lasers
+    }
+    
     //Get results
     var results: [Movie] = []
     for genre in intersectedGenres {

@@ -22,14 +22,14 @@ open class Movie {
     let id: Int
     
     func getImage(completion: @escaping ((Image) -> Void)) {
-        if backdropPath != "" {
-            Alamofire.request("https://image.tmdb.org/t/p/original\(backdropPath)").responseImage {
+        if posterPath != "" {
+            Alamofire.request("https://image.tmdb.org/t/p/original\(posterPath)").responseImage {
                 if let image = $0.result.value {
                     completion(image)
                 }
             }
-        } else if posterPath != "" {
-            Alamofire.request("https://image.tmdb.org/t/p/original\(posterPath)").responseImage {
+        } else if backdropPath != "" {
+            Alamofire.request("https://image.tmdb.org/t/p/original\(backdropPath)").responseImage {
                 if let image = $0.result.value {
                     completion(image)
                 }

@@ -10,7 +10,7 @@ import UIKit
 
 class GenreTableViewController: UITableViewController {
 
-    var delegate: GenreDelegate!
+    var delegate: MovieNightDelegate!
     var person1: Bool!
     
     override func viewDidLoad() {
@@ -19,7 +19,6 @@ class GenreTableViewController: UITableViewController {
     }
     
     func done() {
-        //TODO: Check the selected genres
         var selectedGenres: [Genre] = []
         for item in tableView.visibleCells {
             let cell = item as! GenreTableViewCell

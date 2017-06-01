@@ -11,9 +11,17 @@ import UIKit
 class MoviesTableViewController: UITableViewController {
 
     let results = getResults()
+    var delegate: MovieNightDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start over", style: .done, target: self, action: #selector(done))
+    }
+    
+    func done() {
+        delegate.startOver()
+        self.resignFirstResponder()
+        self.navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Table view data source
@@ -36,11 +44,15 @@ class MoviesTableViewController: UITableViewController {
         cell.titleLabel.text = results[indexPath.row].title
         let genres = results[indexPath.row].genres
         var genresLabelText = ""
-        for genre in genres {
-            genresLabelText += "\(genre.name), "
+        if !genres.isEmpty {
+            for genre in genres {
+                genresLabelText += "\(genre.name), "
+            }
+            genresLabelText.characters.removeLast()
+            cell.genresLabel.text = genresLabelText
+        } else {
+            cell.genresLabel.text = "Maybe you should try again!"
         }
-        genresLabelText.characters.removeLast()
-        cell.genresLabel.text = genresLabelText
         results[indexPath.row].getImage { (image) in
             cell.moviePoster.image = image
         }

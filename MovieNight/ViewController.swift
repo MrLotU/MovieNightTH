@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, GenreDelegate {
+class ViewController: UIViewController, MovieNightDelegate {
 
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -39,10 +39,16 @@ class ViewController: UIViewController, GenreDelegate {
             button2.setImage(image, for: .normal)
         }
     }
- 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func startOver() {
+        viewResultsButton.isEnabled = false
+        viewResultsButton.isHidden = true
+        button1.setImage(UIImage(named: "bubble-empty"), for: .normal)
+        button2.setImage(UIImage(named: "bubble-empty"), for: .normal)
+        personOneDone = false
+        personTwoDone = false
+        person1Genres = []
+        person2Genres = []
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -73,6 +79,9 @@ class ViewController: UIViewController, GenreDelegate {
             } else {
                 newVC.person1 = false
             }
+        } else if segue.identifier == "showMovies" {
+            let newVC = segue.destination as! MoviesTableViewController
+            newVC.delegate = self
         }
     }
 }

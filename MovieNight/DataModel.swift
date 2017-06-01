@@ -20,8 +20,9 @@ extension ViewController {
 
 //MARK: Protocols
 
-protocol GenreDelegate {
+protocol MovieNightDelegate {
     func setImage(_ image: UIImage, forPerson1 person1: Bool)
+    func startOver()
     var personOneDone: Bool { get set }
     var personTwoDone: Bool { get set }
 }
@@ -58,33 +59,6 @@ public enum Genre: Int {
         case .Western: return "Western"
         }
     }
-}
-
-func getMovie(byId id: Int) {
-    Alamofire.request("https://api.themoviedb.org/3/movie/\(id)?api_key=\(API_Key)&language=en-US").responseJSON {
-        if $0.result.value != nil {
-            let json = JSON($0.result.value!)
-            createMovie(fromJSON: json)
-        }
-    }
-}
-
-func createMovie(fromJSON json: JSON) {
-    guard let title = json["title"].string else {print("Something exploded"); return}
-    guard let id = json["id"].int else {print("Something exploded"); return}
-    guard let genresRaw = json["genres"].array else {print("Something exploded"); return}
-    var genres: [Genre] = []
-    for genreDict in genresRaw {
-        guard let id = genreDict["id"].int else {print("Something exploded"); return}
-        guard let genre = Genre(rawValue: id) else {print("Something exploded"); return}
-        genres.append(genre)
-    }
-    guard let backdropPath = json["backdrop_path"].string else {print("Something exploded"); return}
-    guard let posterPath = json["poster_path"].string else {print("Something exploded"); return}
-    
-    let movie = Movie(id: id, title: title, genres: genres, backdropPath: backdropPath, posterPath: posterPath)
-    //FIXME: don't just movies.append, needs to be changed
-    movies.append(movie)
 }
 
 func getMovies(byGenre genre: Genre) {
