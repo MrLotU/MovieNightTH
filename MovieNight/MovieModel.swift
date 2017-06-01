@@ -31,5 +31,9 @@ func getResults() -> [Movie] {
             }
         }
     }
-    return movieResults
+    if !movieResults.isEmpty {
+        return movieResults
+    } else {
+        return [Movie(id: 0, title: "No movies found for the genres specified", genres: [], backdropPath: "", posterPath: "")]
+    }
 }

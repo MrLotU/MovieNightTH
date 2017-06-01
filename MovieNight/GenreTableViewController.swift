@@ -19,6 +19,7 @@ class GenreTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        self.title = "Select Genres"
     }
     
     func done() {

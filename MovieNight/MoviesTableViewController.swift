@@ -19,6 +19,7 @@ class MoviesTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        self.title = "Results"
     }
     
     func done() {
@@ -46,12 +47,16 @@ class MoviesTableViewController: UITableViewController {
         
         cell.titleLabel.text = results[indexPath.row].title
         let genres = results[indexPath.row].genres
-        var genresLabelText = ""
-        for genre in genres {
-            genresLabelText += "\(genre.name), "
+        if !genres.isEmpty {
+            var genresLabelText = ""
+            for genre in genres {
+                genresLabelText += "\(genre.name), "
+            }
+            genresLabelText.characters.removeLast(2)
+            cell.genresLabel.text = genresLabelText
+        } else {
+            cell.genresLabel.text = "You should try again and adjust your criteria!"
         }
-        genresLabelText.characters.removeLast(2)
-        cell.genresLabel.text = genresLabelText
         results[indexPath.row].getImage { (image) in
             cell.moviePoster.image = image
         }
