@@ -39,23 +39,33 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f65-Sp-f71"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-ee-QhA">
+                                <rect key="frame" x="25" y="506" width="325" height="77"/>
+                                <state key="normal" image="viewResults"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEe-xx-8vB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dhn-k9-sYV" secondAttribute="trailing" id="6hQ-f2-4oY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ChB-3a-qcd" secondAttribute="bottom" constant="310" id="FtT-k1-69d"/>
+                            <constraint firstItem="dD8-ee-QhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="evA-7p-etJ"/>
                             <constraint firstItem="kfs-gX-nzK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="jh1-g5-E2p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dhn-k9-sYV" secondAttribute="bottom" id="p6f-ti-ilR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ChB-3a-qcd" secondAttribute="trailing" constant="15" id="q9s-Q0-b3z"/>
                             <constraint firstItem="dhn-k9-sYV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rKB-BH-TYU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kfs-gX-nzK" secondAttribute="bottom" constant="310" id="s7R-JQ-Xqd"/>
                             <constraint firstItem="dhn-k9-sYV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vQH-hX-JgP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dD8-ee-QhA" secondAttribute="bottom" constant="20" id="wQT-wq-x67"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Night" id="6Qn-Lr-50i"/>
                     <connections>
                         <outlet property="button1" destination="kfs-gX-nzK" id="ArV-KV-lYm"/>
                         <outlet property="button2" destination="ChB-3a-qcd" id="J0v-pX-Can"/>
+                        <outlet property="viewResultsButton" destination="dD8-ee-QhA" id="1IA-Ke-nUf"/>
                         <segue destination="XFM-LS-m1Q" kind="show" identifier="showGenres" id="CoP-nq-7sF"/>
                         <segue destination="LHZ-OE-XVc" kind="show" identifier="showMovies" id="ron-RP-fUp"/>
                     </connections>
@@ -190,7 +200,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3x8-Ye-pcZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pin-bb-U6t">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pin-bb-U6t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.74814707040786743" green="0.34618541598320007" blue="0.34493342041969299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -212,5 +222,6 @@
         <image name="Unchecked" width="616" height="616"/>
         <image name="backdrop" width="1241" height="2209"/>
         <image name="bubble-empty" width="123" height="97"/>
+        <image name="viewResults" width="325" height="77"/>
     </resources>
 </document>

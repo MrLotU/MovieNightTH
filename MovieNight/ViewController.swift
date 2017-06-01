@@ -12,6 +12,7 @@ class ViewController: UIViewController, GenreDelegate {
 
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var viewResultsButton: UIButton!
     var personOneDone: Bool = false
     var personTwoDone: Bool = false
     override func viewDidLoad() {
@@ -20,13 +21,14 @@ class ViewController: UIViewController, GenreDelegate {
         for genre in genres {
             getMovies(byGenre: genre)
         }
+        viewResultsButton.isEnabled = false
+        viewResultsButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if personOneDone && personTwoDone {
-            for movie in getResults() {
-                print(movie.title)
-            }
+            viewResultsButton.isEnabled = true
+            viewResultsButton.isHidden = false
         }
     }
     
@@ -44,8 +46,19 @@ class ViewController: UIViewController, GenreDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        selectGenres(sender)
+        if sender == button1 || sender == button2 {
+            selectGenres(sender)
+        } else if sender == viewResultsButton {
+            viewMovies()
+        } else {
+            //TODO: Error magic
+        }
     }
+    
+    func viewMovies() {
+        performSegue(withIdentifier: "showMovies", sender: nil)
+    }
+    
     func selectGenres(_ sender: UIButton) {
         performSegue(withIdentifier: "showGenres", sender: sender)
     }
