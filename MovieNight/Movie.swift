@@ -14,12 +14,13 @@ import AlamofireImage
 public var movies: [Movie] = []
 public var moviesByGenre: [Genre: [Movie]] = [:]
 
-open class Movie {
+open class Movie: Hashable, Equatable {
     let title: String
     let genres: [Genre]
     let backdropPath: String
     let posterPath: String
     let id: Int
+    public var hashValue: Int { get { return id.hashValue } }
     
     func getImage(completion: @escaping ((Image) -> Void)) {
         if posterPath != "" {
@@ -37,6 +38,10 @@ open class Movie {
         } else {
             completion(UIImage(named: "backdrop")!)
         }
+    }
+    
+    public static func ==(left:Movie, right:Movie) -> Bool {
+        return left.id == right.id
     }
     
     init(id: Int, title: String, genres: [Genre], backdropPath: String, posterPath: String) {

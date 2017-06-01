@@ -31,8 +31,11 @@ func getResults() -> [Movie] {
             }
         }
     }
+    
     if !movieResults.isEmpty {
-        return movieResults
+        //Check for no dupes
+        let noDupedMovies = uniq(source: movieResults)
+        return noDupedMovies
     } else {
         return [Movie(id: 0, title: "No movies found for the genres specified", genres: [], backdropPath: "", posterPath: "")]
     }
