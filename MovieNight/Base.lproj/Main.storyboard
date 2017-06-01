@@ -61,7 +61,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dD8-ee-QhA" secondAttribute="bottom" constant="20" id="wQT-wq-x67"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Movie Night" id="6Qn-Lr-50i"/>
+                    <navigationItem key="navigationItem" title="Movie Night" id="6Qn-Lr-50i">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="noz-xN-7II"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="button1" destination="kfs-gX-nzK" id="ArV-KV-lYm"/>
                         <outlet property="button2" destination="ChB-3a-qcd" id="J0v-pX-Can"/>
