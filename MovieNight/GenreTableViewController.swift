@@ -47,7 +47,6 @@ class GenreTableViewController: UITableViewController {
                 self.delegate.personTwoDone = true
             }
         }
-        print("Person 1 genres: \(person1Genres) \nPerson 2 genres: \(person2Genres)")
         self.resignFirstResponder()
         self.navigationController?.popViewController(animated: true)
     }

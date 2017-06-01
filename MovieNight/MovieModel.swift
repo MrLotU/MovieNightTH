@@ -12,6 +12,7 @@ import SwiftyJSON
 public var person1Genres: [Genre] = []
 public var person2Genres: [Genre] = []
 
+
 func getResults() -> [Movie] {
     //Get intersected genres
     var intersectedGenres: [Genre] = []
@@ -21,14 +22,14 @@ func getResults() -> [Movie] {
         }
     }
     
-    //TODO: Fix for if 0 intersections happened
-    
-    //Get movies for intersected Genres
-    var intersectedMovies: [Movie] = []
+    //Get results
+    var results: [Movie] = []
     for genre in intersectedGenres {
-        if let moviesForGenre = moviesByGenre[genre] {
-            intersectedMovies += moviesForGenre
+        guard let moviesForGenre = moviesByGenre[genre] else {
+            //TODO: Get some errors in here
+            return []
         }
+        results += moviesForGenre
     }
-    return movies
+    return results
 }

@@ -22,6 +22,14 @@ class ViewController: UIViewController, GenreDelegate {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if personOneDone && personTwoDone {
+            for movie in getResults() {
+                print(movie.title)
+            }
+        }
+    }
+    
     func setImage(_ image: UIImage, forPerson1 person1: Bool) {
         if person1 {
             button1.setImage(image, for: .normal)
