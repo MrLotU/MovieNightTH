@@ -12,12 +12,11 @@ import SwiftyJSON
 
 //MARK: Extensions
 
-extension ViewController {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+extension UINavigationController {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 }
-
 
 //MARK: Protocols
 
