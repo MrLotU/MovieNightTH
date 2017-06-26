@@ -72,17 +72,17 @@ class GenreTableViewController: UITableViewController {
         cell.titleLabel.text = genres[indexPath.row].name
         if person1 {
             if person1Genres.contains(genres[indexPath.row]) {
-                cell.checker.image = UIImage(named: "Checked")
+                cell.checkerImageView.image = UIImage(named: "Checked")
                 cell.genreIsSelected = true
             } else {
-                cell.checker.image = UIImage(named: "Unchecked")
+                cell.checkerImageView.image = UIImage(named: "Unchecked")
             }
         } else {
             if person2Genres.contains(genres[indexPath.row]) {
-                cell.checker.image = UIImage(named: "Checked")
+                cell.checkerImageView.image = UIImage(named: "Checked")
                 cell.genreIsSelected = true
             } else {
-                cell.checker.image = UIImage(named: "Unchecked")
+                cell.checkerImageView.image = UIImage(named: "Unchecked")
             }
         }
         cell.genre = genres[indexPath.row]
@@ -93,10 +93,10 @@ class GenreTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! GenreTableViewCell
         switch cell.genreIsSelected {
         case true:
-            cell.checker.image = UIImage(named: "Unchecked")
+            cell.checkerImageView.image = UIImage(named: "Unchecked")
             cell.genreIsSelected = false
         case false:
-            cell.checker.image = UIImage(named: "Checked")
+            cell.checkerImageView.image = UIImage(named: "Checked")
             cell.genreIsSelected = true
         }
     }

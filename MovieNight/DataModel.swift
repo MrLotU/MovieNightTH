@@ -85,12 +85,12 @@ func getMovies(byGenre genre: Genre) {
     Alamofire.request("https://api.themoviedb.org/3/genre/\(genre.rawValue)/movies?api_key=\(API_Key)&language=en-US&include_adult=true&sort_by=created_at.desc").responseJSON {
         if $0.result.value != nil {
             let json = JSON($0.result.value!)
-            createMovie(fromJSON: json, withGenre: genre)
+            createMovie(from: json, with: genre)
         }
     }
 }
 
-func createMovie(fromJSON json: JSON, withGenre genre: Genre) {
+func createMovie(from json: JSON, with genre: Genre) {
     guard let results = json["results"].array else {print("Failed to create results for Genre: \(genre)"); return}
     var moviesForGenre: [Movie] = []
     for result in results {

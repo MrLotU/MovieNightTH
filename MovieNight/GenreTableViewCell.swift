@@ -10,10 +10,11 @@ import UIKit
 
 class GenreTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var checker: UIImageView!
+    @IBOutlet weak var checkerImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     var genreIsSelected: Bool = false
     var genre: Genre!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
